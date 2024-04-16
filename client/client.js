@@ -1,40 +1,39 @@
-const form = document.getElementById("writeReview");
+const writeReview = document.getElementById("writeReview");
 
 const reviewWrapper = document.getElementById("reviewWrapper");
 
 function handleSubmit(event) {
-    event.preventDefault();
-    const review = event.target.review.value;
+  event.preventDefault();
+  const review = event.target.review.value;
 
-    console.log({review: review});
+  console.log({ review: review });
 
-    fetch("http://localhost8080/review", {
-        method: "POST",
-        body: { review: review},
-        headers: {
-            "Content-Type": "application/"
-        }
+  fetch("http://localhost8080/review", {
+    method: "POST",
+    body: { review: review },
+    headers: {
+      "Content-Type": "application/",
+    },
+  });
+
+  async function getReview() {
+    const response = await fetch("http://localhost8080/review");
+    const review = await response.json();
+    console.log(review);
+
+    // put the games onto the page
+    review.forEach(function (review) {
+      // DOM manipulation to put the games onto the html
+      const h2 = document.createElement("h2");
+      const p = document.createElement("p");
+
+      h2.textContent = review.title;
+      p.textContent = `review: ${review.messageReview}`;
+
+      reviewWrapper.appendChild(h2);
+      reviewWrapper.appendChild(p);
     });
+  }
 
-async function getReview() {
-const response = await fetch("http://localhost8080/review");
-const review = await response.json();
-console.log(review);
-
-  // put the games onto the page
-review.forEach(function (review) {
-    // DOM manipulation to put the games onto the html
-    const h2 = document.createElement("h2");
-    const p = document.createElement("p");
-
-    h2.textContent = review.title;
-    p.textContent = `review: ${review.messageReview}`;
-
-
-reviewWrapper.appendChild(h2);
-reviewWrapper.appendChild(p);
-});
-}
-
-getReview();
+  getReview();
 }
