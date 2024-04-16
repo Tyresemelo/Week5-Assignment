@@ -15,8 +15,8 @@ app.get("/", function (request, response) {
 
 app.get("/review", function (request, response) {
   // here we use .all instead of .run because we aren't INSERTing, but selecting. So we want ALL the results back
-  const guestbook = db.prepare("SELECT * FROM review").all();
-  response.json(guestbook);
+  const review = db.prepare("SELECT * FROM review").all();
+  response.json(review);
 });
 
 app.post("/message", function (request, response) {
