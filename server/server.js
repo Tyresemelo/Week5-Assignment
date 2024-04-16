@@ -4,7 +4,9 @@ import cors from "cors";
 const app = express();
 app.use(express.json());
 app.use(cors()); // this allows our client to communicate with the server wiithout being blocked
+
 const PORT = "8080";
+
 // connect to a database.db file (normally this would be "connect to the databse that is hosted elsewhere")
 import Database from "better-sqlite3";
 const db = new Database("database.db"); // go and get the existing db file
@@ -32,3 +34,7 @@ app.post("/review", function (request, response) {
 app.listen(8080, function () {
   console.log("App is running on port 8080");
 });
+
+// connect your POST endpoint to the database using sql - 2
+// connect your POST endpoint to the client (form submission) - 3
+// connect your GET endpoint to the client using fetch - 1
