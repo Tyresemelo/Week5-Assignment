@@ -13,9 +13,9 @@ app.get("/", function (request, response) {
   response.json("You are looking at my root route.");
 });
 
-app.get("/guestbook", function (request, response) {
+app.get("/review", function (request, response) {
   // here we use .all instead of .run because we aren't INSERTing, but selecting. So we want ALL the results back
-  const guestbook = db.prepare("SELECT * FROM guestbook").all();
+  const guestbook = db.prepare("SELECT * FROM review").all();
   response.json(guestbook);
 });
 
