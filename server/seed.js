@@ -3,16 +3,16 @@ const db = new Database("database.db"); // either creates a db, or gets the exis
 
 // create reviews table
 db.exec(`
-    CREATE TABLE IF NOT EXISTS guestbook (
+    CREATE TABLE IF NOT EXISTS review (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
-        holidayType TEXT NOT NULL,
+        destination TEXT NOT NULL,
         messageReview TEXT NOT NULL
     )
 `);
 
 // populate the reviews table
 const insertReview = db.prepare(`
-    INSERT INTO review (holidayType, messageReview) VALUES (?, ?)
+    INSERT INTO review (destination, messageReview) VALUES (?, ?)
 `);
 
 insertReview.run(
