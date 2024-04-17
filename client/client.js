@@ -21,9 +21,7 @@ function handleSubmit(event) {
     const review = await response.json();
     console.log(review);
 
-    // put the games onto the page
     review.forEach(function (review) {
-      // DOM manipulation to put the games onto the html
       const h2 = document.createElement("h2");
       const p = document.createElement("p");
 
