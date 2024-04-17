@@ -25,13 +25,10 @@ async function getReview() {
     const review = await response.json();
     console.log(review);
 
+    
     reviewWrapper.innerHTML = ""
-   
-   
-   
-    // put the games onto the page
-    review.forEach(function (review) {
-      // DOM manipulation to put the games onto the html
+  
+   review.forEach(function (review) {
       const h2 = document.createElement("h2");
       const p = document.createElement("p");
 
