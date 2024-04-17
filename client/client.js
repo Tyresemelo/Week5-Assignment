@@ -2,31 +2,37 @@ const writeReview = document.getElementById("writeReview");
 
 const reviewWrapper = document.getElementById("reviewWrapper");
 
+
+writeReview.addEventListener("submit", handleSubmit)
+
 function handleSubmit(event) {
   event.preventDefault();
-  const review = event.target.review.value;
-
-  console.log({ review: review });
-
-  fetch("http://localhost8080/review", {
+  const reviewInput = event.target.review.value;
+  const destinationInput = event.target.destination.value;
+  console.log({ review: reviewInput });
+const reviewData = { destination: destinationInput, review: reviewInput }
+console.log(reviewData)
+  fetch("http://localhost:8080/review", {
     method: "POST",
-    body: { review: review },
+    body: JSON.stringify(reviewData),
     headers: {
-      "Content-Type": "application/",
+      "Content-Type": "application/json",
     },
   });
-
-  async function getReview() {
-    const response = await fetch("http://localhost8080/review");
+}
+async function getReview() {
+    const response = await fetch("http://localhost:8080/review");
     const review = await response.json();
     console.log(review);
+
+reviewWrapper.innerHTML = ""
 
     review.forEach(function (review) {
       const h2 = document.createElement("h2");
       const p = document.createElement("p");
 
-      h2.textContent = review.title;
-      p.textContent = `review: ${review.messageReview}`;
+      h2.textContent = review.destination;
+      p.textContent = review.messageReview;
 
       reviewWrapper.appendChild(h2);
       reviewWrapper.appendChild(p);
@@ -34,4 +40,3 @@ function handleSubmit(event) {
   }
 
   getReview();
-}
