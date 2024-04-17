@@ -24,10 +24,10 @@ async function getReview() {
     const response = await fetch("http://localhost:8080/review");
     const review = await response.json();
     console.log(review);
+
 reviewWrapper.innerHTML = ""
-    // put the games onto the page
+
     review.forEach(function (review) {
-      // DOM manipulation to put the games onto the html
       const h2 = document.createElement("h2");
       const p = document.createElement("p");
 
