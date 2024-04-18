@@ -15,32 +15,33 @@ header {
   align-items: center;
   top: 0;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  font-family: "Satisfy Regular";
+  font-family: "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 h1 {
-  font-size: 60px;
-  font-family: "Satisfy Regular";
-  margin-left: 30px;
+  font-size: 54px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin-left: 0px;
   color: #bdd2a6;
 }
 
 h2 {
   font-size: 34px;
-  font-family: Didact Gothic;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   color: #6f7c71;
 }
 
 #pageInfo {
-  font-size: 30px;
-  margin-top: 320px;
+  font-size: 50px;
+  margin-top: 250px;
   margin-left: auto;
   margin-right: 30px;
   margin-bottom: 60px;
   letter-spacing: 2px;
   width: 600px;
-  color: #3a3a41;
-  font-family: Didact Gothic;
+  color: #242429;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-weight: bold;
 }
 
@@ -53,6 +54,23 @@ h2 {
   margin-top: 120px;
 }
 
+#signIn {
+  font-family: "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 20px;
+  border-radius: 20px;
+  width: 90px;
+  height: 50px;
+  border-style: none;
+  background-color: #bdd2a6;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+#signIn:hover {
+  cursor: pointer;
+  background-color: #99aa87;
+}
+
 a {
   text-decoration: none;
   color: #b9bea5;
@@ -62,20 +80,19 @@ a {
 
 a:hover {
   text-decoration: underline;
-  color: #9da18b;
+  color: #808371;
 }
 
 .navBar {
   position: absolute;
-  left: 600px;
-  word-spacing: 80px;
-  font-style: italic;
-  font-family: "Satisfy Regular";
-  font-size: 30px;
+  left: 700px;
+  word-spacing: 90px;
+  font-family: "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 20px;
 }
 
 .navBar2 {
-  font-family: "Satisfy Regular";
+  font-family: "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   font-size: 40px;
   text-align: center;
   margin-bottom: 40px;
@@ -83,7 +100,7 @@ a:hover {
 }
 
 #flyTo {
-  font-family: Didact Gothic;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   letter-spacing: 2px;
   word-spacing: 0px;
   font-size: 30px;
@@ -96,7 +113,7 @@ section {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  font-family: Didact Gothic;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 section p {
@@ -121,4 +138,78 @@ section img {
 section h2,
 section p {
   max-width: 1000px;
+}
+
+#writeReview {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #eeeeee;
+  border-radius: 10px;
+  width: 400px;
+  margin: auto;
+}
+
+#writeReview label {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+#writeReview input[type="text"],
+#writeReview textarea {
+  width: 350px;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#writeReview button {
+  background-color: #bdd2a6;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+
+#writeReview button:hover {
+  background-color: #99aa87;
+}
+
+footer {
+  background-color: #eeeeee;
+  padding: 20px;
+  text-align: center;
+}
+
+footer p {
+  display: inline;
+  margin: 0;
+  margin-right: 10px;
+}
+
+footer nav ul {
+  list-style-type: none;
+  padding: 0;
+  display: inline;
+}
+
+footer nav ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+footer nav ul li a {
+  text-decoration: none;
+  color: #6f7c71;
+  font-weight: bold;
+}
+
+footer nav ul li a:hover {
+  text-decoration: underline;
 }
